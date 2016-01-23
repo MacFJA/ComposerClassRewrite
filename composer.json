@@ -1,26 +1,31 @@
 {
-  "name": "macfja/class-rewrite",
+  "name": "macfja/composer-class-rewrite",
   "type": "composer-plugin",
   "description": "Composer plugin to handle class rewrite",
   "require": {
     "composer-plugin-api": "^1.0",
-    "andrewsville/php-token-reflection": "~1.0",
-    "ext-runkit": "~1.0"
+    "nikic/php-parser": "^2.0"
   },
   "require-dev": {
-    "composer/composer": "~1.0@dev"
+    "composer/composer": "~1.0@dev",
+    "phpunit/phpunit": "^5.1",
+    "squizlabs/php_codesniffer": "^2.5"
   },
   "extra": {
-    "class": "MacFJA\\ClassRewrite\\Worker"
+    "class": "MacFJA\\ClassRewrite\\Plugin",
+    "composer-class-rewrite": {
+      "ignore-namespace": ["PhpParser\\"]
+    }
   },
   "autoload": {
     "psr-4": {
-      "MacFJA\\ClassRewrite\\": "lib/"
+      "MacFJA\\ClassRewrite\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
       "MacFJA\\Test\\": "test/"
     }
-  }
+  },
+  "prefer-stable": true
 }
