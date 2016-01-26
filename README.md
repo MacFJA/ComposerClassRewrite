@@ -1,21 +1,21 @@
 # Composer Class-Rewrite
 
-[![Latest Version](https://img.shields.io/github/release/macfja/composer-class-rewrite.svg)](https://github.com/macfja/composer-class-rewrite/releases)
+[![Latest Version](https://img.shields.io/github/release/MacFJA/ComposerClassRewrite.svg)](https://github.com/MacFJA/ComposerClassRewrite/releases)
 [![Software License](https://img.shields.io/packagist/l/macfja/composer-class-rewrite.svg)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/macfja/composer-class-rewrite.svg)](https://packagist.org/packages/macfja/composer-class-rewrite)
 
 ## What is Composer Class-Rewrite
 
-Composer Class-Rewrite is a [Composer](https://getcomposer.org) plugin that allow you to rewrite almost[^1] any classes of your project.
+Composer Class-Rewrite is a [Composer](https://getcomposer.org) plugin that allow you to rewrite almost[<sup>1</sup>][^1] any classes of your project.
 
-[^1]: See the [**Limitations**](#limitations) section
+[^1]: <#limitations> "See the Limitations section"
 
-## Principle[^2]
+## Principle[<sup>2</sup>][^2]
 
 The idea is to scan every classes of the project to find classes declared as a rewrite. Then we make some modification on the parent (rewritten) class (_a copy of the parent class_) and the rewriter class (_a copy of the rewriter class_) and finally add them to the Composer autoload (before **PSR-0** and **PSR-4** classes).
 So, when a class ask for the rewritten class, Composer will return our modified rewiter class.
 
-[^2]: For more information on how it works, see the [**How it works**](#how-it-works) section
+[^2]: <#how-it-works> "For more information on how it works, see the How it works section"
 
 ## Installation
 
